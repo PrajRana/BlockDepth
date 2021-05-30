@@ -5,15 +5,12 @@ def readfile():
         for words in info:
             # get rid of space before words and new line
             hold = (words.strip(" ")).strip("/n")
-            # if hold has { or } in it
             if '}' in hold or '{' in hold:
-                # if hold starts with {
                 if hold.startswith('{'):
                     # block started so increase counter
                     counter = counter + 1
                     print(counter, words, end='')
-
-                # if hold starts with }
+                    
                 elif hold.startswith('}'):
                     # leaving block so print block value and
                     # then decrement block value
